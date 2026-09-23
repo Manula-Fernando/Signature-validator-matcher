@@ -8,7 +8,7 @@
 [![Model Context Protocol](https://img.shields.io/badge/MCP-Compatible-purple.svg)](https://modelcontextprotocol.io/)
 [![Hardware](https://img.shields.io/badge/Hardware-Pure%20CPU%20(Zero%20GPU)-orange.svg)](https://pytorch.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/manula/Signature-validator-matcher)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Manula-Fernando/Signature-validator-matcher)
 
 > **Signature-validator-matcher** is a lightweight, production-ready AI signature detection and verification engine designed for financial institutions, banking KYC pipelines, and document validation workflows. It automatically detects signature bounding boxes on checks, National ID cards (NIC), driving licenses, contracts, and passports, extracts clean 1-pixel stroke skeletons, and verifies genuine identity vs. forgeries using a hybrid deep metric ResNet Siamese network — running **100% locally on standard CPU with 0.00% False Acceptance Rate (FAR)**.
 
@@ -138,7 +138,7 @@ All model weights are stored locally in `models/weights/` and are tracked direct
 ### Installation
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/Signature-validator-matcher.git
+git clone https://github.com/Manula-Fernando/Signature-validator-matcher.git
 cd Signature-validator-matcher
 
 # 2. Create and activate a virtual environment
@@ -346,7 +346,7 @@ git commit -m "feat: Initial commit of SignaVerify enterprise signature detectio
 
 # 5. Create a new repository on GitHub (e.g., named 'Signature-validator-matcher')
 # Then link your remote and push:
-git remote add origin https://github.com/<YOUR-GITHUB-USERNAME>/Signature-validator-matcher.git
+git remote add origin https://github.com/Manula-Fernando/Signature-validator-matcher.git
 git push -u origin main
 ```
 

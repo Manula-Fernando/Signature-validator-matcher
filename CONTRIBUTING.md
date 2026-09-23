@@ -12,10 +12,10 @@ If you find this project useful, please consider giving it a **Star ⭐** on Git
 ## 🚀 How to Contribute
 
 ### 1. Fork & Clone
-1. Fork the repository on GitHub by clicking the **Fork** button at the top right of [Signature-validator-matcher](https://github.com/your-username/Signature-validator-matcher).
+1. Fork the repository on GitHub by clicking the **Fork** button at the top right of [Signature-validator-matcher](https://github.com/Manula-Fernando/Signature-validator-matcher).
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/<your-username>/Signature-validator-matcher.git
+   git clone https://github.com/Manula-Fernando/Signature-validator-matcher.git
    cd Signature-validator-matcher
    ```
 
