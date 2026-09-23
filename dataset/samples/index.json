@@ -1,0 +1,122 @@
+{
+  "documents": [
+    {
+      "id": "cheque_lolc_finance_genuine",
+      "title": "Sri Lankan Cheque: LOLC Finance (Genuine)",
+      "description": "Authentic LOLC Finance PLC cheque in LKR signed by Manula Fernando (CUST_002).",
+      "filename": "cheque_lolc_finance_genuine.jpg",
+      "expected_customer_id": "CUST_002",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "cheque_lolc_finance_forged",
+      "title": "Sri Lankan Cheque: LOLC Finance (Forged)",
+      "description": "Fraudulent LOLC Finance cheque with attempted forgery drawn on Manula Fernando's account.",
+      "filename": "cheque_lolc_finance_forged.jpg",
+      "expected_customer_id": "CUST_002",
+      "expected_verdict": "REJECTED_FORGERY"
+    },
+    {
+      "id": "sri_lanka_smart_nic",
+      "title": "Sri Lankan Smart NIC (Polycarbonate)",
+      "description": "Department of Registration of Persons Smart NIC (12-digit: 199815403219) with holder signature.",
+      "filename": "sri_lanka_smart_nic.jpg",
+      "expected_customer_id": "CUST_002",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "sri_lanka_driving_license",
+      "title": "Sri Lankan Driving License (DMT)",
+      "description": "Department of Motor Traffic official driving card belonging to Chaminda Bandara (CUST_003).",
+      "filename": "sri_lanka_driving_license.jpg",
+      "expected_customer_id": "CUST_003",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "lolc_lease_agreement",
+      "title": "LOLC Finance Lease / Facility Agreement",
+      "description": "Official commercial vehicle lease agreement executed by Manula Fernando (CUST_002).",
+      "filename": "lolc_lease_agreement.jpg",
+      "expected_customer_id": "CUST_002",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "cheque_genuine",
+      "title": "Global Bank Cheque (Genuine)",
+      "description": "Standard Global Trust Bank cheque signed by customer Johnathan Carter (CUST_001).",
+      "filename": "cheque_genuine.jpg",
+      "expected_customer_id": "CUST_001",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "cheque_forged",
+      "title": "Global Bank Cheque (Forged)",
+      "description": "Fraudulent cheque drawn on Johnathan Carter's account with a forged signature.",
+      "filename": "cheque_forged.jpg",
+      "expected_customer_id": "CUST_001",
+      "expected_verdict": "REJECTED_FORGERY"
+    },
+    {
+      "id": "passport_page",
+      "title": "Official Passport Page",
+      "description": "International passport data page with Bearer's signature.",
+      "filename": "passport_page.jpg",
+      "expected_customer_id": "CUST_001",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "national_id",
+      "title": "National ID Card (General)",
+      "description": "National Identity Card specimen with Johnathan Carter signature.",
+      "filename": "national_id_card.jpg",
+      "expected_customer_id": "CUST_001",
+      "expected_verdict": "VERIFIED_MATCH"
+    },
+    {
+      "id": "loan_contract",
+      "title": "Commercial Loan Contract",
+      "description": "Legal contract document with borrower signature line at bottom.",
+      "filename": "loan_contract.jpg",
+      "expected_customer_id": "CUST_001",
+      "expected_verdict": "VERIFIED_MATCH"
+    }
+  ],
+  "sample_signatures": [
+    {
+      "filename": "manula_sig_ballpoint.png",
+      "signer": "Manula Fernando (CUST_002 - Ballpoint Pen)"
+    },
+    {
+      "filename": "manula_sig_gel.png",
+      "signer": "Manula Fernando (CUST_002 - Thick Gel Pen)"
+    },
+    {
+      "filename": "manula_sig_fountain.png",
+      "signer": "Manula Fernando (CUST_002 - Fountain Pen)"
+    },
+    {
+      "filename": "manula_sig_forged.png",
+      "signer": "Attempted Forgery (Impostor on CUST_002)"
+    },
+    {
+      "filename": "person_A_sig1.png",
+      "signer": "Johnathan Carter (CUST_001 - Specimen 1)"
+    },
+    {
+      "filename": "person_A_sig2.png",
+      "signer": "Johnathan Carter (CUST_001 - Specimen 2)"
+    },
+    {
+      "filename": "person_C_sig1.png",
+      "signer": "Chaminda Bandara (CUST_003 - Specimen 1)"
+    },
+    {
+      "filename": "person_D_sig1.png",
+      "signer": "Dilani Perera (CUST_004 - Specimen 1)"
+    },
+    {
+      "filename": "person_E_sig1.png",
+      "signer": "Sarah Jenkins (CUST_005 - Specimen 1)"
+    }
+  ]
+}

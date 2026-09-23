@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Verification & Detection Agent | Enterprise AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Navigation -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+            <path d="M2 2l7.586 7.586"></path>
+            <circle cx="11" cy="11" r="2"></circle>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>SignaVerify <span class="badge-agent">AI AGENT</span></h1>
+          <p class="brand-subtitle">Enterprise Offline Signature Localization & Pen-Invariant Verification</p>
+        </div>
+      </div>
+
+      <div class="system-status-badges">
+        <div class="status-pill">
+          <span class="status-dot online"></span>
+          <span class="status-text">CPU Inference: <strong id="status-device">CPU</strong></span>
+        </div>
+        <div class="status-pill">
+          <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          <span>Detector: <strong>YOLOS-tiny (6.4M)</strong></span>
+        </div>
+        <div class="status-pill">
+          <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Verifier: <strong>Skeleton Metric Learning</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="tab-doc-verify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Document Verification (E2E)
+      </button>
+      <button class="tab-btn" data-tab="tab-pair-verify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        Pairwise Signature Matcher
+      </button>
+      <button class="tab-btn" data-tab="tab-customers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        Customer Specimen Store
+      </button>
+      <button class="tab-btn" data-tab="tab-audits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        Audit Log
+      </button>
+      <button class="tab-btn" data-tab="tab-integration">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Agent & MCP Integration
+      </button>
+    </nav>
+
+    <!-- TAB 1: Document Verification Flow (E2E) -->
+    <main class="tab-content active" id="tab-doc-verify">
+      <div class="workspace-grid">
+        <!-- Left Panel: Input & Document Preview -->
+        <div class="panel card">
+          <div class="panel-header">
+            <h2>1. Document Source & Customer Selection</h2>
+            <span class="tag">Cheques, IDs, Passports, Contracts</span>
+          </div>
+
+          <!-- Quick 1-Click Preset Samples -->
+          <div class="preset-selector-group">
+            <label class="control-label">Quick Test Presets (1-Click Evaluation):</label>
+            <div class="preset-chips">
+              <button class="preset-chip active" data-preset="cheque_genuine">
+                <span class="chip-icon">🏦</span> Bank Cheque (Genuine)
+              </button>
+              <button class="preset-chip" data-preset="cheque_forged">
+                <span class="chip-icon">⚠️</span> Bank Cheque (Forged)
+              </button>
+              <button class="preset-chip" data-preset="national_id">
+                <span class="chip-icon">🪪</span> National ID Card
+              </button>
+              <button class="preset-chip" data-preset="passport_page">
+                <span class="chip-icon">🛂</span> Passport Page
+              </button>
+              <button class="preset-chip" data-preset="loan_contract">
+                <span class="chip-icon">📜</span> Loan Agreement
+              </button>
+            </div>
+          </div>
+
+          <!-- Upload Dropzone -->
+          <div class="upload-dropzone" id="doc-dropzone">
+            <input type="file" id="doc-file-input" accept="image/*" hidden>
+            <div class="dropzone-content">
+              <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              <p>Drag & drop document or <span class="browse-link">browse file</span></p>
+              <span class="dropzone-hint">Supports JPEG, PNG, TIFF up to 20MB</span>
+            </div>
+          </div>
+
+          <!-- Customer Selection -->
+          <div class="form-row">
+            <div class="form-group flex-2">
+              <label for="customer-select" class="control-label">Compare Against Registered Customer:</label>
+              <select id="customer-select" class="form-select">
+                <option value="CUST_001">Johnathan Carter (CUST_001) - 3 Enrolled Specimens</option>
+                <option value="CUST_002">Manula Fernando (CUST_002) - 2 Enrolled Specimens</option>
+                <option value="CUST_003">Sarah Jenkins (CUST_003) - 1 Enrolled Specimen</option>
+              </select>
+            </div>
+            <div class="form-group flex-1">
+              <label for="doc-type-select" class="control-label">Document Type:</label>
+              <select id="doc-type-select" class="form-select">
+                <option value="Cheque">Bank Cheque</option>
+                <option value="NIC">National ID Card</option>
+                <option value="Passport">Passport</option>
+                <option value="Contract">Legal Agreement</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <button id="btn-verify-doc" class="btn btn-primary btn-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Execute End-to-End Verification
+          </button>
+        </div>
+
+        <!-- Right Panel: Live Visual Verification Report -->
+        <div class="panel card result-panel">
+          <div class="panel-header">
+            <h2>2. Verification & Localization Report</h2>
+            <span id="verdict-pill" class="verdict-badge pending">Awaiting Execution</span>
+          </div>
+
+          <!-- Document Canvas with Bounding Box Overlay -->
+          <div class="preview-canvas-container">
+            <div class="canvas-header">
+              <span>Document Preview & Signature Bounding Box</span>
+              <span id="detection-count-tag" class="small-tag">0 Signatures Found</span>
+            </div>
+            <div class="image-wrapper">
+              <img id="doc-preview-img" src="" alt="Document Preview" class="responsive-preview">
+            </div>
+          </div>
+
+          <!-- Scorecard & Gauge -->
+          <div class="scorecard-grid">
+            <div class="scorecard-metric">
+              <span class="metric-label">Similarity Score</span>
+              <div class="gauge-container">
+                <div class="gauge-value" id="metric-similarity">0.0%</div>
+                <div class="gauge-bar-bg">
+                  <div class="gauge-bar-fill" id="metric-gauge-fill" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="scorecard-metric">
+              <span class="metric-label">Min Embedding Distance</span>
+              <div class="metric-number" id="metric-dist">0.0000</div>
+              <span class="metric-sub">L2 normalized distance</span>
+            </div>
+            <div class="scorecard-metric">
+              <span class="metric-label">Detection Latency</span>
+              <div class="metric-number" id="metric-det-lat">0.0 ms</div>
+              <span class="metric-sub">YOLOS-tiny on CPU</span>
+            </div>
+            <div class="scorecard-metric">
+              <span class="metric-label">Verifier Latency</span>
+              <div class="metric-number" id="metric-ver-lat">0.0 ms</div>
+              <span class="metric-sub">ResNet Skeleton on CPU</span>
+            </div>
+          </div>
+
+          <!-- Stroke Normalization & Specimen Comparison Inspector -->
+          <div class="stroke-inspector-box">
+            <div class="inspector-header">
+              <span>Stroke Inspection & Invariance Breakdown</span>
+              <span class="small-tag active">Pen-Thickness Neutralized</span>
+            </div>
+            <div class="stroke-comparison-grid">
+              <div class="stroke-tile">
+                <span class="tile-title">Detected Signature Crop</span>
+                <div class="stroke-img-frame">
+                  <img id="crop-raw" src="" alt="Cropped Signature">
+                </div>
+                <span class="tile-meta">Raw Scanned Ink</span>
+              </div>
+              <div class="stroke-tile">
+                <span class="tile-title">Normalized Midline Skeleton</span>
+                <div class="stroke-img-frame skeleton-bg">
+                  <img id="crop-skeleton" src="" alt="Skeletonized Stroke">
+                </div>
+                <span class="tile-meta">1-px Kinematic Midline</span>
+              </div>
+              <div class="stroke-tile">
+                <span class="tile-title">Matched Bank Specimen</span>
+                <div class="stroke-img-frame">
+                  <img id="crop-specimen" src="" alt="Customer Specimen">
+                </div>
+                <span class="tile-meta" id="specimen-label">Specimen #1 on File</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explanatory Narrative -->
+          <div class="explanation-box" id="explanation-box">
+            <p id="explanation-text">Select a preset document or upload an image and click "Execute End-to-End Verification".</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 2: Pairwise Signature Matcher -->
+    <main class="tab-content" id="tab-pair-verify">
+      <div class="card pairwise-container">
+        <div class="panel-header">
+          <h2>Direct Pairwise Signature Verification</h2>
+          <span class="tag">Zero-Document Overhead • Instant Comparison</span>
+        </div>
+
+        <div class="pair-inputs-grid">
+          <!-- Signature 1 (Query) -->
+          <div class="pair-column">
+            <h3>Candidate / Query Signature</h3>
+            <div class="upload-dropzone compact" id="pair-dropzone-1">
+              <input type="file" id="pair-file-1" accept="image/*" hidden>
+              <div class="dropzone-content">
+                <p>Upload Query Signature</p>
+              </div>
+            </div>
+            <div class="image-wrapper compact-frame">
+              <img id="pair-preview-1" src="" alt="Signature 1">
+            </div>
+          </div>
+
+          <!-- VS Indicator -->
+          <div class="vs-column">
+            <div class="vs-badge">VS</div>
+            <button id="btn-verify-pair" class="btn btn-primary btn-round">
+              Compare
+            </button>
+          </div>
+
+          <!-- Signature 2 (Reference) -->
+          <div class="pair-column">
+            <h3>Reference Specimen Signature</h3>
+            <div class="upload-dropzone compact" id="pair-dropzone-2">
+              <input type="file" id="pair-file-2" accept="image/*" hidden>
+              <div class="dropzone-content">
+                <p>Upload Reference Signature</p>
+              </div>
+            </div>
+            <div class="image-wrapper compact-frame">
+              <img id="pair-preview-2" src="" alt="Signature 2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Pairwise Results Banner -->
+        <div class="pair-result-banner" id="pair-result-banner" style="display: none;">
+          <div class="pair-verdict-tag" id="pair-verdict">VERIFIED_MATCH</div>
+          <div class="pair-metrics-summary">
+            <span>Similarity: <strong id="pair-sim">0.0%</strong></span>
+            <span>Cosine Sim: <strong id="pair-cos">0.0000</strong></span>
+            <span>Latency: <strong id="pair-lat">0.0 ms</strong></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 3: Customer Specimen Store -->
+    <main class="tab-content" id="tab-customers">
+      <div class="workspace-grid">
+        <!-- Customer List -->
+        <div class="panel card">
+          <div class="panel-header">
+            <h2>Registered Customer Specimen Registry</h2>
+            <span class="tag">Local SQLite Database</span>
+          </div>
+          <div class="customer-table-container">
+            <table class="data-table" id="customer-table">
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>Full Name</th>
+                  <th>Account No</th>
+                  <th>Doc Type</th>
+                  <th>Specimens</th>
+                </tr>
+              </thead>
+              <tbody id="customer-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Enroll New Customer Form -->
+        <div class="panel card">
+          <div class="panel-header">
+            <h2>Enroll New Customer Signature Specimen</h2>
+            <span class="tag">Add to Cluster</span>
+          </div>
+
+          <form id="enroll-form">
+            <div class="form-group">
+              <label for="enroll-id" class="control-label">Customer ID / NIC:</label>
+              <input type="text" id="enroll-id" class="form-input" placeholder="e.g. CUST_1042" required>
+            </div>
+            <div class="form-group">
+              <label for="enroll-name" class="control-label">Full Name:</label>
+              <input type="text" id="enroll-name" class="form-input" placeholder="e.g. David Williams" required>
+            </div>
+            <div class="form-group">
+              <label for="enroll-account" class="control-label">Bank Account Number:</label>
+              <input type="text" id="enroll-account" class="form-input" placeholder="e.g. 0081-3329-8812">
+            </div>
+            <div class="form-group">
+              <label for="enroll-doc" class="control-label">Primary ID Type:</label>
+              <input type="text" id="enroll-doc" class="form-input" placeholder="Passport / National ID">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Upload Specimen Signatures (1 to 3 samples):</label>
+              <input type="file" id="enroll-files" accept="image/*" multiple class="form-file-input">
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Enroll Specimen in Database</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 4: Audit Logs -->
+    <main class="tab-content" id="tab-audits">
+      <div class="card">
+        <div class="panel-header">
+          <h2>Verification Audit Trail</h2>
+          <span class="tag">Immutable Compliance Log</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table" id="audit-table">
+            <thead>
+              <tr>
+                <th>Audit ID</th>
+                <th>Customer ID</th>
+                <th>Document Type</th>
+                <th>Verdict</th>
+                <th>Result</th>
+                <th>Similarity %</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody id="audit-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 5: Integration & MCP -->
+    <main class="tab-content" id="tab-integration">
+      <div class="card integration-card">
+        <div class="panel-header">
+          <h2>Model Context Protocol (MCP) & Agent Plug-in Guide</h2>
+          <span class="tag">Enterprise Extensibility</span>
+        </div>
+
+        <div class="integration-content">
+          <p class="section-desc">
+            SignaVerify exposes both a <strong>FastAPI REST API</strong> and a <strong>Model Context Protocol (MCP) Server</strong>,
+            allowing autonomous AI agents (Claude, ChatGPT, LangChain, AutoGen) or enterprise backends (Java, C#, Node.js)
+            to verify signatures with 1 line of code.
+          </p>
+
+          <div class="code-box-group">
+            <h3>1. Model Context Protocol (MCP) Configuration</h3>
+            <p class="small-text">Add to your <code>claude_desktop_config.json</code> or Gemini agent manifest:</p>
+            <pre class="code-block"><code>{
+  "mcpServers": {
+    "signature_agent": {
+      "command": "python",
+      "args": ["d:/AI_Internship_ManulaFernando_LOLC_Tech_2025/02_Project_Notes/Signature-validator-matcher/agent/mcp_server.py"]
+    }
+  }
+}</code></pre>
+          </div>
+
+          <div class="code-box-group">
+            <h3>2. Python SDK (3-Line In-Process or HTTP Integration)</h3>
+            <pre class="code-block"><code>from agent.client_sdk import SignatureAgentClient
+
+client = SignatureAgentClient(mode="direct")  # Zero-network overhead
+result = client.verify_document_for_customer(
+    document_image="cheque_image.jpg",
+    customer_id="CUST_001",
+    document_type="Cheque"
+)
+print(f"Match: {result['is_match']}, Verdict: {result['verdict']}, Similarity: {result['similarity_percentage']}%")</code></pre>
+          </div>
+
+          <div class="code-box-group">
+            <h3>3. REST API Endpoint (/api/v1/verify-document)</h3>
+            <pre class="code-block"><code>curl -X POST "http://localhost:8000/api/v1/verify-document" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "document_image": "data:image/jpeg;base64,...",
+    "customer_id": "CUST_001",
+    "document_type": "Cheque"
+  }'</code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>SignaVerify Agent POC &bull; LOLC Technology Internship 2025/2026</span>
+      <span>Hardware: Pure CPU &bull; Models: YOLOS-tiny + ResNet18 Metric Backbone</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

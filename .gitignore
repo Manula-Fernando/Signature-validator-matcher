@@ -1,0 +1,31 @@
+# Python Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Large Cache Dirs (keep models/weights, but ignore temporary cache)
+models/weights/.cache/
+
+# Git Tracking Exceptions (Ensure model weights, datasets, and samples ARE tracked)
+!models/weights/*.pt
+!dataset/samples/
+!data/signatures.db
