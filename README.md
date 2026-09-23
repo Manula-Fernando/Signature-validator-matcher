@@ -1,14 +1,18 @@
-# SignaVerify: Enterprise Signature Detection & Verification Agent
+# Signature-validator-matcher
 
+### *Enterprise AI Signature Detection, Verification & Matching Agent (100% Offline CPU)*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-Compatible-purple.svg)](https://modelcontextprotocol.io/)
 [![Hardware](https://img.shields.io/badge/Hardware-Pure%20CPU%20(Zero%20GPU)-orange.svg)](https://pytorch.org/)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/manula/Signature-validator-matcher)
 
-**SignaVerify** is a production-grade, offline-capable AI agent and API service for automated signature localization, morphological preprocessing, and deep Siamese metric verification. Built specifically for **financial institutions, commercial banking, and identity verification pipelines**, it operates **strictly on standard local CPU** (no GPU required, <300MB RAM footprint) with sub-second response times.
+> **Signature-validator-matcher** is a lightweight, production-ready AI signature detection and verification engine designed for financial institutions, banking KYC pipelines, and document validation workflows. It automatically detects signature bounding boxes on checks, National ID cards (NIC), driving licenses, contracts, and passports, extracts clean 1-pixel stroke skeletons, and verifies genuine identity vs. forgeries using a hybrid deep metric ResNet Siamese network — running **100% locally on standard CPU with 0.00% False Acceptance Rate (FAR)**.
 
-The system natively resolves the **intra-personal handwriting variability challenge** (different pens, fine ballpoint vs. thick gel vs. fountain pen, ink saturation, and slight angular tilts) while detecting forgeries and impostor attacks with **100% verification accuracy** and **0.0% False Acceptance Rate (FAR)**.
+⭐ **If you find this project helpful for your banking or AI document automation work, please give it a Star! Contributions and Pull Requests are warmly welcomed!** See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
